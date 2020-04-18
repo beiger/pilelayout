@@ -1,14 +1,46 @@
 # pilelayout
+An abnormal horizontal ListView-like pile layout. See Android version https://github.com/xmuSistone/AndroidPileLayout
 
-A new Flutter plugin.
+## captured images
 
-## Getting Started
+![image](https://github.com/beiger/pilelayout/blob/master/res/images/1.gif) ![image](https://github.com/beiger/pilelayout/blob/master/res/images/2.gif) 
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+## usage
+```java
+PileView({
+		Key key,
+		this.scrollDirection = Axis.horizontal,
+		this.reverse = false,
+		PileController controller,
+		this.physics,
+		this.pageSnapping = true,
+		this.onPageChanged,
+		List<Widget> children = const <Widget>[],
+		this.dragStartBehavior = DragStartBehavior.start,
+});
+  
+PileView.builder({
+		Key key,
+		this.scrollDirection = Axis.horizontal,
+		this.reverse = false,
+		PileController controller,
+		this.physics,
+		this.pageSnapping = true,
+		this.onPageChanged,
+		@required IndexedWidgetBuilder itemBuilder,
+		int itemCount,
+		this.dragStartBehavior = DragStartBehavior.start
+});
+                   
+PileView.custom({
+		Key key,
+		this.scrollDirection = Axis.horizontal,
+		this.reverse = false,
+		PileController controller,
+		this.physics,
+		this.pageSnapping = true,
+		this.onPageChanged,
+		@required this.childrenDelegate,
+		 this.dragStartBehavior = DragStartBehavior.start,
+})
+```
