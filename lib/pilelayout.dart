@@ -24,7 +24,6 @@ class PileView extends StatefulWidget {
 		         List<Widget> children = const <Widget>[],
 		         this.dragStartBehavior = DragStartBehavior.start,
 	         }) : 	controller = controller ?? _defaultPileController,
-	
 				childrenDelegate = SliverChildListDelegate(children),
 				super(key: key);
 	
