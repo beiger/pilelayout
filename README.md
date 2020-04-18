@@ -59,9 +59,9 @@ PileView.custom({
 for example:
 ```dart
 class _MyAppState extends State<MyApp> {
-
+	
 	PileController _controller;
-
+	
 	@override
 	void initState() {
 		super.initState();
@@ -73,37 +73,34 @@ class _MyAppState extends State<MyApp> {
 	}
 	
 	@override
-        void dispose() {
-		        _controller.dispose();
-                 super.dispose();
-         }
-
+	void dispose() {
+		_controller.dispose();
+		super.dispose();
+	}
+	
 	@override
 	Widget build(BuildContext context) {
-		return MaterialApp(
-			home: Scaffold(
-				backgroundColor: Colors.white,
-				appBar: Appbar(),
-				body: SizedBox(
-                      height: 230,
-                      child: PileView.builder(
-                      		scrollDirection: Axis.horizontal,
-                      		reverse: false,
-                      		controller: _controller,
-                      		physics: BouncingScrollPhysics(),
-                      		itemBuilder: (context, index) {
-                      				return Container(
-                                                color: Colors.green
-                                      );
-                            },
-                      		itemCount: 19,
-                      		onPageChanged: (page) {
-                      				print("onPageChanged: $page");
-                      		},
-                        )
-                 )
+		return Scaffold(
+			backgroundColor: Colors.white,
+			appBar: AppBar(),
+			body: SizedBox(
+				height: 230,
+				child: PileView.builder(
+					scrollDirection: Axis.horizontal,
+					reverse: false,
+					controller: _controller,
+					physics: BouncingScrollPhysics(),
+					itemBuilder: (context, index) {
+						return Container(color: Colors.green);
+					},
+					itemCount: 19,
+					onPageChanged: (page) {
+						print("onPageChanged: $page");
+					},
+				)
 			)
 		);
 	}
 }
+
 ```
